@@ -7,8 +7,12 @@ import { BoardStatusValidationPipe } from './pipes/boards-status-validation.pip'
 
 @Controller('boards')
 export class BoardsController {
-  constructor(private boardService: BoardsService) { }
+  constructor(private boardService: BoardsService) {}
 
+  @Get()
+  getAllBoard(): Promise<Board[]> {
+    return this.boardService.getAllBoards();
+  }
   // @Get()
   // getAllBoard(): Board[] {
   //   return this.boardService.getAllBoards();
@@ -26,7 +30,7 @@ export class BoardsController {
   @Post()
   @UsePipes(ValidationPipe)
   createBoard(@Body() createBoardDto: CreateBoardDto): Promise<Board> {
-    return this.boardService.createBoard(createBoardDto)
+    return this.boardService.createBoard(createBoardDto);
   }
   // @Post()
   // @UsePipes(ValidationPipe)
@@ -43,6 +47,10 @@ export class BoardsController {
   //   this.boardService.deleteBoard(id);
   // }
 
+  @Patch('/:id/status')
+  updateBoardStatus(@Param('id') id: number, @Body('status', BoardStatusValidationPipe) status: BoardStatus) {
+    return this.boardService.updateBoardStatus(id, status);
+  }
   // @Patch('/:id/status')
   // updateBoardStatus(
   //   @Param('id') id: string,
