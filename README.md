@@ -41,7 +41,7 @@ Method: `POST`
 
 ### 게시글 업데이트
 
-URI: `/boards/:id/status`
+URI: `/boards/:id/status`  
 Method: `PATCH`
 
 - Request
@@ -66,7 +66,7 @@ Method: `PATCH`
 
 ### 게시글 삭제
 
-URI: `/boards/:id`
+URI: `/boards/:id`  
 Method: `Delete`
 
 - Response: `status 200`
@@ -75,7 +75,7 @@ Method: `Delete`
 
 ### 회원가입
 
-URI: `/boards/:id/status`
+URI: `/boards/:id/status`  
 Method: `PATCH`
 
 - Request
@@ -91,7 +91,7 @@ Method: `PATCH`
 
 ### 로그인
 
-URI: `/auth/signup`
+URI: `/auth/signup`  
 Method: `POST`
 
 - Request
